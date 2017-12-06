@@ -216,7 +216,7 @@ public:
     /// <remarks>The listener will not have been opened when returned.</remarks>
     /// <param name="address">URI at which the listener should accept requests.</param>
     http_listener(http::uri address)
-        : m_impl(utility::details::make_unique<details::http_listener_impl>(address))
+        : m_impl(utility::details::make_unique<details::http_listener_impl>(std::move(address)))
     {
     }
 

@@ -52,16 +52,9 @@ static void check_listener_uri(const http::uri &address)
 }
 
 details::http_listener_impl::http_listener_impl(http::uri address)
-    : m_uri(address), m_closed(true)
+    : m_uri(std::move(address)), m_closed(true)
 {
-	int flags = _CrtSetDbgFlag(_CRTDBG_REPORT_FLAG);
-	//int old = flags;
-	flags |= _CRTDBG_CHECK_ALWAYS_DF;
-	flags |= _CRTDBG_ALLOC_MEM_DF;
-	_CrtSetDbgFlag(flags);
-	_CrtCheckMemory();
     check_listener_uri(m_uri);
-	_CrtCheckMemory();
 }
 
 details::http_listener_impl::http_listener_impl(http::uri address, http_listener_config config)
