@@ -41,7 +41,7 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <PreprocessorDefinitions>_WINSOCK_DEPRECATED_NO_WARNINGS;_ASYNCRT_EXPORT;_PPLX_EXPORT;WIN32;_USRDLL;_NDEBUG;BOOST_AUTO_LINK_TAGGED;BOOST_THREAD_DYN_LINK;PD_IOSTD;ID_TIPP;IL_DLL;IL_STD;_WINDOWS</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(CasablancaIncludeDir);$(CasablancaSrcDir)\pch;$(WebsocketppIncludeDir);$(boost_root);C:\workspace\11.0.3_MDMS\utility\openssl\prebuilt\VC\Win32\Debug\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(CasablancaIncludeDir);$(CasablancaSrcDir)\pch;$(WebsocketppIncludeDir);$(boost_root);$(BuildRoot)\..\openssl\prebuilt\VC\$(Platform)\$(Configuration)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <AdditionalOptions>-Zm160 /bigobj %(AdditionalOptions)</AdditionalOptions>
@@ -58,7 +58,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Default</BasicRuntimeChecks>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>Winhttp.lib;httpapi.lib;bcrypt.lib;crypt32.lib;c:\workspace\11.0.3_MDMS/utility/openssl/prebuilt/VC/$(Platform)/$(Configuration)/lib/libeay32.lib;c:\workspace\11.0.3_MDMS/utility/openssl/prebuilt/VC/$(Platform)/$(Configuration)/lib/ssleay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Winhttp.lib;httpapi.lib;bcrypt.lib;crypt32.lib;$(BuildRoot)/../openssl/prebuilt/VC/$(Platform)/$(Configuration)/lib/libeay32.lib;$(BuildRoot)/../openssl/prebuilt/VC/$(Platform)/$(Configuration)/lib/ssleay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkTimeCodeGeneration Condition="'$(Configuration)'=='Release'">UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(boost_root)/stage/vs2013/x86/dll;$(boost_root)/stage/vs2013/x86/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
