@@ -64,7 +64,7 @@ static struct ASIO_SSL_memory_leak_suppress
 {
     ~ASIO_SSL_memory_leak_suppress()
     {
-        ::SSL_COMP_free_compression_methods();
+        //::SSL_COMP_free_compression_methods();
     }
 } ASIO_SSL_memory_leak_suppressor;
 
